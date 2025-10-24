@@ -5,9 +5,9 @@ using UnityEngine;
 public class BallController : MonoBehaviour
 {
 
-    public Rigidbody ballRb;
-    public float impulseFloat = 5f;
-    private bool isNextCollision;
+    private Rigidbody ballRb;
+    public float impulseForce = 5f;
+    private bool ignoreCollision;
 
     // Start is called before the first frame update
     void Start()
@@ -17,8 +17,18 @@ public class BallController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (ignoreCollision)
+            return;
+
         ballRb.velocity = Vector3.zero;
-        ballRb.AddForce(Vector3.up, ForceMode.Impulse);
+        ballRb.AddForce(Vector3.up * impulseForce, ForceMode.Impulse);
+        ignoreCollision = true;
+        Invoke("AllowCollision", .2f);
+    }
+
+    private void AllowCollision()
+    {
+        ignoreCollision = false;
     }
 
     // Update is called once per frame
