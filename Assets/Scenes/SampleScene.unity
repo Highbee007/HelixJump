@@ -172,7 +172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8450900241152891456, guid: c2f5b00a79e819b448fbf338a2ecc49b, type: 3}
       propertyPath: m_Name
-      value: Helix top (1)
+      value: HelixLevel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
