@@ -567,8 +567,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81aafe86fb17ff24b9d972d3f4b680f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ballRb: {fileID: 1403787787}
   isNextCollision: 0
-  speed: 7
 --- !u!1001 &7481714312080666687
 PrefabInstance:
   m_ObjectHideFlags: 0
