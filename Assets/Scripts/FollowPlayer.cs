@@ -7,7 +7,7 @@ public class FollowPlayer : MonoBehaviour
     private BallController ball;
     private float offset;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         ball = GameObject.Find("Ball").GetComponent<BallController>();
         offset = transform.position.y - ball.transform.position.y;
