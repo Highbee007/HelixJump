@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        best = PlayerPrefs.GetInt("Highscore");
     }
 
     // Update is called once per frame
@@ -41,6 +42,7 @@ public class GameManager : MonoBehaviour
         if (score > best)
         {
             best = score;
+            PlayerPrefs.SetInt("Highscore", score);
         }
     }
 }
