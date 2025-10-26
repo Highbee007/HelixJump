@@ -6,10 +6,18 @@ public class HelixController : MonoBehaviour
 {
     private Vector2 lastTapPos;
     private Vector3 startRotation;
-    // Start is called before the first frame update
+
+    public Transform topTransform;
+    public Transform goalTransform;
+    public GameObject helixPrefab;
+
+    public List<Stages> allStages = new List<Stages>();
+    private float helixDistance;
+    private List<GameObject> spawnLevels = new List<GameObject>();
     void Awake()
     {
         startRotation = transform.localEulerAngles;
+        helixDistance = topTransform.localPosition.y - (goalTransform.localPosition.y + 0.1f);
     }
 
     // Update is called once per frame
@@ -19,7 +27,7 @@ public class HelixController : MonoBehaviour
         {
             Vector2 currentTapPos = Input.mousePosition;
 
-            if(lastTapPos == Vector2.zero)
+            if (lastTapPos == Vector2.zero)
             {
                 lastTapPos = currentTapPos;
             }
@@ -34,5 +42,9 @@ public class HelixController : MonoBehaviour
                 lastTapPos = Vector2.zero;
             }
         }
+    }
+    public void LoadStage(int stageNumber)
+    {
+        Stages stage = allStages[Mathf.Clamp(stageNumber, 0, allStages.Count - 1)];
     }
 }
