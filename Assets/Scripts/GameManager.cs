@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     public int currentStage = 0;
 
+    private BallController ball;
+
     public static GameManager singleton;
     // Start is called before the first frame update
     void Awake()
@@ -22,6 +24,8 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         best = PlayerPrefs.GetInt("Highscore");
+
+        ball = GameObject.Find("Ball").GetComponent<BallController>();
     }
 
     // Update is called once per frame
@@ -33,6 +37,11 @@ public class GameManager : MonoBehaviour
     public void RestartLevel()
     {
         Debug.Log("Game Over");
+        // Show ads
+
+        singleton.score = 0;
+        ball.ResetBall();
+
     }
 
     public void AddScore(int scoreToAdd)

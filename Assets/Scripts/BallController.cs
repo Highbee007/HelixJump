@@ -8,11 +8,13 @@ public class BallController : MonoBehaviour
     private Rigidbody ballRb;
     public float impulseForce = 5f;
     private bool ignoreCollision;
+    public Vector3 startPos;
 
     // Start is called before the first frame update
     void Start()
     {
         ballRb = GetComponent<Rigidbody>();
+        startPos = transform.position;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -38,9 +40,8 @@ public class BallController : MonoBehaviour
         ignoreCollision = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ResetBall()
     {
-        
+        transform.position = startPos;
     }
 }
