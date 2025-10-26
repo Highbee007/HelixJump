@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
 
     public void RestartLevel()
     {
-
+        Debug.Log("Game Over");
     }
 
     public void AddScore(int scoreToAdd)

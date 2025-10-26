@@ -10,9 +10,8 @@ public class DeathPart : MonoBehaviour
         GetComponent<MeshRenderer>().material.color = Color.red;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void HitDeathPart()
     {
-        
+        GameManager.singleton.RestartLevel();
     }
 }

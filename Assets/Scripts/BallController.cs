@@ -17,6 +17,13 @@ public class BallController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        // Adding ResetLevel Functionality via DeathPart.
+        DeathPart deathPart = collision.transform.GetComponent<DeathPart>();
+        if (deathPart)
+        {
+            deathPart.HitDeathPart();
+        }
+
         if (ignoreCollision)
             return;
 

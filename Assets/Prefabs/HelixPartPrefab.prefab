@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 33503575971346426}
   - component: {fileID: 23577808976779464}
   - component: {fileID: 64828263212785176}
-  - component: {fileID: 7674231096938918653}
   m_Layer: 0
   m_Name: HelixPartPrefab
   m_TagString: Untagged
@@ -107,15 +106,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6150326042995890324, guid: ac8f234ab6827d748a01945845612f5d, type: 3}
---- !u!114 &7674231096938918653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1139882819383378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4031542dbfd6c247b6ad2c6b3827f36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
