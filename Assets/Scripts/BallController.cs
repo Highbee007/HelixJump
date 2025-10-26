@@ -24,9 +24,6 @@ public class BallController : MonoBehaviour
         ballRb.AddForce(Vector3.up * impulseForce, ForceMode.Impulse);
         ignoreCollision = true;
         Invoke("AllowCollision", .2f);
-
-        GameManager.singleton.AddScore(1);
-        Debug.Log(GameManager.singleton.score);
     }
 
     private void AllowCollision()

@@ -25,9 +25,9 @@ public class GameManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void NextLevel()
+    public void NextLevel()
     {
-
+        Debug.Log("Next Level was called");
     }
 
     public void RestartLevel()
