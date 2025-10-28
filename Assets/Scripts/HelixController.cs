@@ -60,5 +60,7 @@ public class HelixController : MonoBehaviour
         ball.GetComponent<MeshRenderer>().material.color = allStages[stageNumber].stageBallColor;
 
         transform.localEulerAngles = startRotation;
+
+        float levelDistance = helixDistance / stage.levels.Count;
     }
 }
