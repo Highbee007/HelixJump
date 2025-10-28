@@ -993,6 +993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   impulseForce: 5
+  startPos: {x: 0, y: 0, z: 0}
 --- !u!4 &1453514262 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6783215781816440547, guid: 9f706630ab7816c439da686740f372ce, type: 3}
@@ -1233,6 +1234,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c34689cd021934e48b1568d872c03118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  topTransform: {fileID: 0}
+  goalTransform: {fileID: 0}
+  helixPrefab: {fileID: 0}
+  allStages:
+  - {fileID: 11400000, guid: 01a934777146a45439b3e03f1fee2b73, type: 2}
+  - {fileID: 11400000, guid: f0c3c65d3b5b59545a608d2bee534f0d, type: 2}
+  - {fileID: 11400000, guid: e6cc66b35fef2bc4ab7724d3c2d0d646, type: 2}
 --- !u!1001 &4896638485046278769
 PrefabInstance:
   m_ObjectHideFlags: 0
