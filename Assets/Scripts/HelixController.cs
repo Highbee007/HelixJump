@@ -14,7 +14,7 @@ public class HelixController : MonoBehaviour
 
     public List<Stages> allStages = new List<Stages>();
     private float helixDistance;
-    private List<GameObject> spawnLevels = new List<GameObject>();
+    private List<GameObject> spawnedLevels = new List<GameObject>();
     void Awake()
     {
         ball = GameObject.Find("Ball").GetComponent<BallController>();
@@ -60,6 +60,11 @@ public class HelixController : MonoBehaviour
         ball.GetComponent<MeshRenderer>().material.color = allStages[stageNumber].stageBallColor;
 
         transform.localEulerAngles = startRotation;
+
+        foreach (GameObject go in spawnedLevels)
+        {
+            Destroy(go);
+        }
 
         float levelDistance = helixDistance / stage.levels.Count;
     }
