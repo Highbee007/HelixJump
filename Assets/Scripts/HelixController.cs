@@ -10,14 +10,12 @@ public class HelixController : MonoBehaviour
     public Transform topTransform;
     public Transform goalTransform;
     public GameObject helixLevelPrefab;
-    private BallController ball;
 
     public List<Stages> allStages = new List<Stages>();
     private float helixDistance;
     private List<GameObject> spawnedLevels = new List<GameObject>();
     void Awake()
     {
-        ball = GameObject.Find("Ball").GetComponent<BallController>();
         startRotation = transform.localEulerAngles;
         helixDistance = topTransform.localPosition.y - (goalTransform.localPosition.y + 0.1f);
         LoadStage(0);
@@ -59,7 +57,7 @@ public class HelixController : MonoBehaviour
 
         Camera.main.backgroundColor = allStages[stageNumber].stageBackgroundColor;
 
-        ball.GetComponent<MeshRenderer>().material.color = allStages[stageNumber].stageBallColor;
+        FindObjectOfType<BallController>().GetComponent<MeshRenderer>().material.color = allStages[stageNumber].stageBallColor;
 
         transform.localEulerAngles = startRotation;
 

@@ -1166,7 +1166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   topTransform: {fileID: 6783215781816440547, guid: 9f706630ab7816c439da686740f372ce, type: 3}
   goalTransform: {fileID: 1443857120265621412, guid: 207fc7e08fcaaa54b9c8503581e7c624, type: 3}
-  helixLevelPrefab: {fileID: 8450900242743494851}
+  helixLevelPrefab: {fileID: 1264934232405710597, guid: b3ac8f6ab08785542b2fc5328c297627, type: 3}
   allStages:
   - {fileID: 11400000, guid: 01a934777146a45439b3e03f1fee2b73, type: 2}
   - {fileID: 11400000, guid: f0c3c65d3b5b59545a608d2bee534f0d, type: 2}
@@ -1293,11 +1293,6 @@ Transform:
 --- !u!4 &6783215783446922336 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8202349290723921476, guid: b3ac8f6ab08785542b2fc5328c297627, type: 3}
-  m_PrefabInstance: {fileID: 1881712559880091577}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8450900242743494851 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1264934232405710597, guid: b3ac8f6ab08785542b2fc5328c297627, type: 3}
   m_PrefabInstance: {fileID: 1881712559880091577}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
