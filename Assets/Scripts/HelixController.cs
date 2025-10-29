@@ -9,7 +9,7 @@ public class HelixController : MonoBehaviour
 
     public Transform topTransform;
     public Transform goalTransform;
-    public GameObject helixPrefab;
+    public GameObject helixLevelPrefab;
     private BallController ball;
 
     public List<Stages> allStages = new List<Stages>();
@@ -20,7 +20,9 @@ public class HelixController : MonoBehaviour
         ball = GameObject.Find("Ball").GetComponent<BallController>();
         startRotation = transform.localEulerAngles;
         helixDistance = topTransform.localPosition.y - (goalTransform.localPosition.y + 0.1f);
+        LoadStage(0);
     }
+
 
     // Update is called once per frame
     void Update()
@@ -67,5 +69,16 @@ public class HelixController : MonoBehaviour
         }
 
         float levelDistance = helixDistance / stage.levels.Count;
+        float spawnPosY = transform.localPosition.y;
+
+        for (int i = 0; i < stage.levels.Count; i++)
+        {
+            spawnPosY -= levelDistance;
+            // Create level within scene
+            GameObject level = Instantiate(helixLevelPrefab, transform);
+            Debug.Log("Levels Spawned");
+            level.transform.localPosition = new Vector3(0, spawnPosY, 0);
+            spawnedLevels.Add(level);
+        }
     }
 }
