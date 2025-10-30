@@ -72,6 +72,8 @@ public class HelixController : MonoBehaviour
         for (int i = 0; i < stage.levels.Count; i++)
         {
             spawnPosY -= levelDistance;
+
+            Debug.Log(spawnPosY);
             // Create level within scene
             GameObject level = Instantiate(helixLevelPrefab, transform);
             level.transform.localPosition = new Vector3(0, spawnPosY, 0);
