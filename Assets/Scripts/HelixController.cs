@@ -47,39 +47,50 @@ public class HelixController : MonoBehaviour
     }
     public void LoadStage(int stageNumber)
     {
+        // Get the correct stage
         Stages stage = allStages[Mathf.Clamp(stageNumber, 0, allStages.Count - 1)];
 
-        if (allStages == null)
+        if (stage == null)
         {
-            Debug.LogError("No stages " + stageNumber + " found in allstage list. Are all stages assigned to the list?");
+            Debug.LogError("No stage " + stageNumber + " found in allStages list (HelixController). All stages assigned in list?");
             return;
         }
 
+        // Set the new background color
         Camera.main.backgroundColor = allStages[stageNumber].stageBackgroundColor;
+        FindObjectOfType<BallController>().GetComponent<Renderer>().material.color = allStages[stageNumber].stageBallColor;
 
-        FindObjectOfType<BallController>().GetComponent<MeshRenderer>().material.color = allStages[stageNumber].stageBallColor;
-
+        // Reset the helix rotation
         transform.localEulerAngles = startRotation;
 
+        // Destroy the old levels if there are some
         foreach (GameObject go in spawnedLevels)
-        {
             Destroy(go);
-        }
 
+        // Create the new levels
         float levelDistance = helixDistance / stage.levels.Count;
-        Debug.Log("Level Distance: " + levelDistance);
-        float spawnPosY = transform.localPosition.y;
-        Debug.Log("Spawn Pos Y: " + spawnPosY);
+        float spawnPosY = topTransform.localPosition.y;
 
         for (int i = 0; i < stage.levels.Count; i++)
         {
             spawnPosY -= levelDistance;
-
-            Debug.Log(spawnPosY);
-            // Create level within scene
             GameObject level = Instantiate(helixLevelPrefab, transform);
+            Debug.Log("Spawned Level");
             level.transform.localPosition = new Vector3(0, spawnPosY, 0);
             spawnedLevels.Add(level);
+
+            int partToDisable = 12 - stage.levels[i].partCount;
+            List<GameObject> disabledParts = new List<GameObject>();
+
+            while (disabledParts.Count < partToDisable)
+            {
+                GameObject randomPart = level.transform.GetChild(Random.Range(0, level.transform.childCount)).gameObject;
+                if(!disabledParts.Contains(randomPart))
+                {
+                    randomPart.SetActive(false);
+                    disabledParts.Add(randomPart);
+                }
+            }
         }
     }
 }

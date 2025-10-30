@@ -846,6 +846,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61fdedd8493f4b740947d15a2b2469aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1182878408 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5296458146488550003, guid: b3ac8f6ab08785542b2fc5328c297627, type: 3}
+  m_PrefabInstance: {fileID: 1881712559880091577}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1403787782
 GameObject:
   m_ObjectHideFlags: 0
@@ -1148,7 +1153,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 904997734}
-  - {fileID: 6783215783446922336}
+  - {fileID: 1182878408}
   - {fileID: 6466331081152888579}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1166,7 +1171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   topTransform: {fileID: 6783215781816440547, guid: 9f706630ab7816c439da686740f372ce, type: 3}
   goalTransform: {fileID: 1443857120265621412, guid: 207fc7e08fcaaa54b9c8503581e7c624, type: 3}
-  helixLevelPrefab: {fileID: 1264934232405710597, guid: b3ac8f6ab08785542b2fc5328c297627, type: 3}
+  helixLevelPrefab: {fileID: 4975791150667317171, guid: b3ac8f6ab08785542b2fc5328c297627, type: 3}
   allStages:
   - {fileID: 11400000, guid: 01a934777146a45439b3e03f1fee2b73, type: 2}
   - {fileID: 11400000, guid: f0c3c65d3b5b59545a608d2bee534f0d, type: 2}
@@ -1289,11 +1294,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1443857120265621412, guid: 207fc7e08fcaaa54b9c8503581e7c624, type: 3}
   m_PrefabInstance: {fileID: 4896638485046278769}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &6783215783446922336 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8202349290723921476, guid: b3ac8f6ab08785542b2fc5328c297627, type: 3}
-  m_PrefabInstance: {fileID: 1881712559880091577}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
