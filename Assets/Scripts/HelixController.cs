@@ -67,7 +67,9 @@ public class HelixController : MonoBehaviour
         }
 
         float levelDistance = helixDistance / stage.levels.Count;
+        Debug.Log("Level Distance: " + levelDistance);
         float spawnPosY = transform.localPosition.y;
+        Debug.Log("Spawn Pos Y: " + spawnPosY);
 
         for (int i = 0; i < stage.levels.Count; i++)
         {
