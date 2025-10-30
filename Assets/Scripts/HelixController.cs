@@ -115,7 +115,6 @@ public class HelixController : MonoBehaviour
                 {
                     randomPart.gameObject.AddComponent<DeathPart>();
                     deathParts.Add(randomPart);
-                    Debug.Log("Show");
                 }
             }
         }
