@@ -79,6 +79,7 @@ public class HelixController : MonoBehaviour
             level.transform.localPosition = new Vector3(0, spawnPosY, 0);
             spawnedLevels.Add(level);
 
+            // Creating the gaps
             int partToDisable = 12 - stage.levels[i].partCount;
             List<GameObject> disabledParts = new List<GameObject>();
 
@@ -89,6 +90,32 @@ public class HelixController : MonoBehaviour
                 {
                     randomPart.SetActive(false);
                     disabledParts.Add(randomPart);
+                }
+            }
+
+            List<GameObject> leftParts = new List<GameObject>();
+
+            foreach (Transform t in level.transform) {
+                t.GetComponent<MeshRenderer>().material.color = allStages[stageNumber].stageLevelPartColor;
+                if (t.gameObject.activeInHierarchy)
+                {
+                    leftParts.Add(t.gameObject);
+                }
+            }
+
+            //Creating Death parts
+
+            List<GameObject> deathParts = new List<GameObject>();
+
+            while (deathParts.Count < stage.levels[i].deathCount)
+            {
+                GameObject randomPart = leftParts[(Random.Range(0, leftParts.Count))];
+
+                if (!deathParts.Contains(randomPart))
+                {
+                    randomPart.gameObject.AddComponent<DeathPart>();
+                    deathParts.Add(randomPart);
+                    Debug.Log("Show");
                 }
             }
         }
