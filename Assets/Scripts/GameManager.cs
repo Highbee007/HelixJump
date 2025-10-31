@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        best = PlayerPrefs.GetInt("Highscore");
+        best = PlayerPrefs.GetInt("Bestscore");
 
         ball = GameObject.Find("Ball").GetComponent<BallController>();
     }
@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
         if (score > best)
         {
             best = score;
-            PlayerPrefs.SetInt("Highscore", score);
+            PlayerPrefs.SetInt("Bestscore", score);
         }
     }
 }
