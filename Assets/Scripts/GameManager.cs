@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     public int currentStage = 0;
 
+    public bool isGameActive;
+
     private BallController ball;
 
     public static GameManager singleton;
@@ -24,6 +26,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         best = PlayerPrefs.GetInt("Bestscore");
+        isGameActive = false;
 
         ball = GameObject.Find("Ball").GetComponent<BallController>();
     }
@@ -57,4 +60,12 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("Bestscore", score);
         }
     }
+    public void StartGame()
+    {
+        isGameActive = true;
+        GameObject.Find("Title").SetActive(false);
+        FindObjectOfType<HelixController>().LoadStage(0);
+    }
 }
+
+

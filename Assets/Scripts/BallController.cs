@@ -17,6 +17,10 @@ public class BallController : MonoBehaviour
     {
         ballRb = GetComponent<Rigidbody>();
         startPos = transform.position;
+        if (!FindObjectOfType<GameManager>().isGameActive)
+        {
+            ballRb.useGravity = false;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
