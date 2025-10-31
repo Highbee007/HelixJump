@@ -8,5 +8,6 @@ public class GoalBehaviour : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         GameManager.singleton.NextLevel();
+        FindObjectOfType<BallController>().perfectPass++;
     }
 }

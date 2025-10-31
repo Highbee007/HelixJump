@@ -31,7 +31,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     public void NextLevel()
     {
-        Debug.Log("Next Level was called");
+        currentStage++;
+        FindObjectOfType<BallController>().ResetBall();
+        FindObjectOfType<HelixController>().LoadStage(currentStage);
     }
 
     public void RestartLevel()
@@ -41,7 +43,8 @@ public class GameManager : MonoBehaviour
 
         singleton.score = 0;
         ball.ResetBall();
-
+        FindObjectOfType<BallController>().ResetBall();
+        FindObjectOfType<HelixController>().LoadStage(currentStage);
     }
 
     public void AddScore(int scoreToAdd)
