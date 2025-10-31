@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdbf13b367b57e14197e32aaff2b342a, type: 3}
   m_Name: 2
   m_EditorClassIdentifier: 
-  stageBackgroundColor: {r: 0.23374355, g: 0, b: 0.5245282, a: 1}
-  stageLevelPartColor: {r: 0, g: 0.42249495, b: 0.8113208, a: 1}
-  stageBallColor: {r: 0.7660377, g: 0.53622633, b: 0.6173362, a: 1}
+  stageBackgroundColor: {r: 1, g: 0.9411765, b: 0.9647059, a: 1}
+  stageLevelPartColor: {r: 0.1882353, g: 0.21960784, b: 0.25490198, a: 1}
+  stageBallColor: {r: 0.9137255, g: 0.2509804, b: 0.34117648, a: 1}
   levels: []
