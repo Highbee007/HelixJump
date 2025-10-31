@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class GoalBehaviour : MonoBehaviour
 {
-    // Start is called before the first frame update
+
     private void OnCollisionEnter(Collision collision)
     {
         GameManager.singleton.NextLevel();
-        FindObjectOfType<BallController>().perfectPass++;
     }
 }

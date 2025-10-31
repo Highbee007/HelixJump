@@ -28,7 +28,7 @@ public class BallController : MonoBehaviour
         {
             if (!collision.transform.GetComponent<GoalBehaviour>())
             {
-                Destroy(collision.gameObject);
+                Destroy(collision.transform.parent.gameObject);
                 Debug.Log("Destroying platform");
             }
         }
@@ -46,7 +46,6 @@ public class BallController : MonoBehaviour
         ballRb.AddForce(Vector3.up * impulseForce, ForceMode.Impulse);
         ignoreCollision = true;
         Invoke("AllowCollision", .2f);
-
         perfectPass = 0;
         isSuperSpeedActive = false;
     }
