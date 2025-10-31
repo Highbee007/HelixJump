@@ -5,7 +5,7 @@ using UnityEngine;
 public class BallController : MonoBehaviour
 {
 
-    private Rigidbody ballRb;
+    public Rigidbody ballRb;
     public float impulseForce = 5f;
     private bool ignoreCollision;
     public Vector3 startPos;

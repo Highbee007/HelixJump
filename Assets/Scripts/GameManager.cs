@@ -65,6 +65,7 @@ public class GameManager : MonoBehaviour
         isGameActive = true;
         GameObject.Find("Title").SetActive(false);
         FindObjectOfType<HelixController>().LoadStage(0);
+        FindObjectOfType<BallController>().ballRb.useGravity = true;
     }
 }
 
