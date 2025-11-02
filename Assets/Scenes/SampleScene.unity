@@ -1599,6 +1599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81aafe86fb17ff24b9d972d3f4b680f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ballRb: {fileID: 0}
   impulseForce: 5
   startPos: {x: 0, y: 0, z: 0}
   perfectPass: 0
@@ -1741,8 +1742,8 @@ TrailRenderer:
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
+        inWeight: 0
+        outWeight: 0
       - serializedVersion: 3
         time: 1
         value: 0
