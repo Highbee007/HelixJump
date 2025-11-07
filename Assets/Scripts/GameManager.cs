@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
     {
         if (isGameActive)
         {
-            Instantiate()
+            Instantiate(ballPrefab, new Vector3(Random.Range(-1,2), Random.Range(4, -4), 0), ballPrefab.transform.rotation);
         }
     }
 }
