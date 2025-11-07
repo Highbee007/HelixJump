@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public int best;
     public int score;
+    public GameObject ballPrefab;
 
     public int currentStage = 0;
 
@@ -66,6 +67,14 @@ public class GameManager : MonoBehaviour
         GameObject.Find("Title").SetActive(false);
         FindObjectOfType<HelixController>().LoadStage(0);
         FindObjectOfType<BallController>().ballRb.useGravity = true;
+    }
+
+    public void ChaosMode()
+    {
+        if (isGameActive)
+        {
+            Instantiate()
+        }
     }
 }
 
